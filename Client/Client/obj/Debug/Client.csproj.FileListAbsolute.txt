@@ -1,0 +1,4 @@
+C:\Home\Lab6\Client\Client\bin\Client.dll
+C:\Home\Lab6\Client\Client\bin\Client.pdb
+C:\Home\Lab6\Client\Client\obj\Debug\Client.dll
+C:\Home\Lab6\Client\Client\obj\Debug\Client.pdb

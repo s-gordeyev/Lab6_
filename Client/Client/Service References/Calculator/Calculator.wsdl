@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Calculator" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:1034/Calculator.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:1034/Calculator.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:1034/Calculator.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICalculator_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_clck_InputMessage">
+    <wsdl:part name="parameters" element="tns:clck" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_clck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:clckResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_memory_InputMessage">
+    <wsdl:part name="parameters" element="tns:memory" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_memory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:memoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_act_InputMessage">
+    <wsdl:part name="parameters" element="tns:act" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_act_OutputMessage">
+    <wsdl:part name="parameters" element="tns:actResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_setValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:setValue" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_setValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_getValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:getValue" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_getValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_bckspc_InputMessage">
+    <wsdl:part name="parameters" element="tns:bckspc" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_bckspc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:bckspcResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_ce_InputMessage">
+    <wsdl:part name="parameters" element="tns:ce" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_ce_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_c_InputMessage">
+    <wsdl:part name="parameters" element="tns:c" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_c_OutputMessage">
+    <wsdl:part name="parameters" element="tns:cResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICalculator">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalculator/GetData" message="tns:ICalculator_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalculator/GetDataResponse" message="tns:ICalculator_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalculator/GetDataUsingDataContract" message="tns:ICalculator_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalculator/GetDataUsingDataContractResponse" message="tns:ICalculator_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="clck">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalculator/clck" message="tns:ICalculator_clck_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalculator/clckResponse" message="tns:ICalculator_clck_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="memory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalculator/memory" message="tns:ICalculator_memory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalculator/memoryResponse" message="tns:ICalculator_memory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="act">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalculator/act" message="tns:ICalculator_act_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalculator/actResponse" message="tns:ICalculator_act_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalculator/setValue" message="tns:ICalculator_setValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalculator/setValueResponse" message="tns:ICalculator_setValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalculator/getValue" message="tns:ICalculator_getValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalculator/getValueResponse" message="tns:ICalculator_getValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="bckspc">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalculator/bckspc" message="tns:ICalculator_bckspc_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalculator/bckspcResponse" message="tns:ICalculator_bckspc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ce">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalculator/ce" message="tns:ICalculator_ce_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalculator/ceResponse" message="tns:ICalculator_ce_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="c">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalculator/c" message="tns:ICalculator_c_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalculator/cResponse" message="tns:ICalculator_c_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICalculator" type="tns:ICalculator">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/ICalculator/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/ICalculator/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clck">
+      <soap:operation soapAction="http://tempuri.org/ICalculator/clck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="memory">
+      <soap:operation soapAction="http://tempuri.org/ICalculator/memory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="act">
+      <soap:operation soapAction="http://tempuri.org/ICalculator/act" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setValue">
+      <soap:operation soapAction="http://tempuri.org/ICalculator/setValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getValue">
+      <soap:operation soapAction="http://tempuri.org/ICalculator/getValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bckspc">
+      <soap:operation soapAction="http://tempuri.org/ICalculator/bckspc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ce">
+      <soap:operation soapAction="http://tempuri.org/ICalculator/ce" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="c">
+      <soap:operation soapAction="http://tempuri.org/ICalculator/c" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Calculator">
+    <wsdl:port name="BasicHttpBinding_ICalculator" binding="tns:BasicHttpBinding_ICalculator">
+      <soap:address location="http://localhost:1034/Calculator.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
